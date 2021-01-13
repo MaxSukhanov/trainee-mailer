@@ -10,6 +10,8 @@ module TraineeMailer
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
+    config.active_job.queue_adapter = :sidekiq
+    config.action_mailer.deliver_later_queue_name = nil # defaults to "mailers"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

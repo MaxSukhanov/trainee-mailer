@@ -1,0 +1,11 @@
+send_thousands_mails:
+  cron: "*/15 * * * *"
+  class: "SendThousandsMailsJob"
+  queue: low
+
+send_one_hundred_mails:
+  cron: "30 13 14 1 *"
+  class: "SendOneHundredMailsJob"
+  queue: default
+
+
